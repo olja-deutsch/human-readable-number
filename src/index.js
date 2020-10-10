@@ -14,23 +14,23 @@ module.exports = function toReadable (number) {
 
     if (number.length === 3) {
         if (number[1] === '0' && number[2] === '0') {
-            readableNumber = `${numbersName[Number(number[0])]} hundred`;
+            readableNumber = `${numbersName[number[0]]} hundred`;
         } else if (number[1] === '0') {
-            readableNumber = `${numbersName[Number(number[0])]} hundred ${numbersName[Number(number[2])]}`;
+            readableNumber = `${numbersName[number[0]]} hundred ${numbersName[number[2]]}`;
         } else if (number[2] === '0') {
-            readableNumber = `${numbersName[Number(number[0])]} hundred ${numbersName[Number(number[1] + number[2])]}`;
+            readableNumber = `${numbersName[number[0]]} hundred ${numbersName[number[1] + number[2]]}`;
         } else if (number[1] === '1') {
-            readableNumber = `${numbersName[Number(number[0])]} hundred ${numbersName[Number(number[1] + number[2])]}`;
+            readableNumber = `${numbersName[number[0]]} hundred ${numbersName[number[1] + number[2]]}`;
         } else {
-            readableNumber = `${numbersName[Number(number[0])]} hundred ${numbersName[Number(number[1] + 0)]} ${numbersName[Number(number[2])]}`;
+            readableNumber = `${numbersName[number[0]]} hundred ${numbersName[number[1] + 0]} ${numbersName[number[2]]}`;
         };
     } else if (number.length === 2) {
         if (number[1] === '0') {
-            readableNumber = numbersName[Number(number[0] + 0)];
+            readableNumber = numbersName[number[0] + 0];
         } else if (number[0] === '1') {
-            readableNumber = numbersName[Number(number)];
+            readableNumber = numbersName[number];
         } else {
-            readableNumber = `${numbersName[Number(number[0] + 0)]} ${numbersName[Number(number[1])]}`;
+            readableNumber = `${numbersName[number[0] + 0]} ${numbersName[number[1]]}`;
         };
     } else {
         readableNumber = numbersName[number];
